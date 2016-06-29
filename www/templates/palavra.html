@@ -1,0 +1,17 @@
+<ion-header-bar class="bar-light bar-subheader">
+    <input type="search" placeholder="Buscar Produto..." ng-model="search" ng-focus="searchFocused = true" ng-blur="searchFocused = false" ng-change="scrollTop()" class="full-width">
+</ion-header-bar>
+<ion-view view-title="Lista de Produtos">
+    <ion-content>
+        <div class="item" ng-init="load()" collection-repeat="p in produtos | filter:search">
+            <div class="row">
+                <div class="col col-50 positive" style="text-align: left !important">{{p.codigo}}</div>
+                <div class="col col-50 balanced">{{p.valor}}</div>
+            </div>
+            <div class="row">
+                <div class="col col-100 royal" style="text-align: left !important">{{p.descricao}}</div>
+            </div>
+        </div>
+        </div>
+    </ion-content>
+</ion-view>
